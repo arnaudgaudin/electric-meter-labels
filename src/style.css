@@ -4,17 +4,10 @@
 :root {
   /* theme de couleurs */
   --primary-hsl: 214 82% 56%;
-  --secondary-hsl: 37 82% 56%;
   /* raccourcis pour accès direct */
   --primary: hsl(var(--primary-hsl));
-  --secondary: hsl(var(--secondary-hsl));
-
-  --primary-dark: color-mix(in hsl, hsl(var(--primary-hsl)) 60%, black);
+  --primary-dark: color-mix(in hsl, hsl(var(--primary-hsl)) 40%, black);
   --primary-light: color-mix(in hsl, hsl(var(--primary-hsl)) 80%, white);
-
-  /* Secondary */
-  --secondary-dark: color-mix(in hsl, hsl(var(--secondary-hsl)) 60%, black);
-  --secondary-light: color-mix(in hsl, hsl(var(--secondary-hsl)) 80%, white);
 
 
   font-family: "Noto Sans", sans-serif;
@@ -46,16 +39,12 @@
     -webkit-print-color-adjust: exact; /* Chrome, Safari */
     print-color-adjust: exact;         /* Firefox, Edge */
   }
-
-  .etiquette {
-    background-color: #f5f5f5;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
 }
 
 .electric-meter-labels {
   display: inline-block;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 
   .title {
     text-align: center;
@@ -64,60 +53,58 @@
     margin-bottom: 5mm;
   }
 
-  .icons, .texts {
+  .labels {
     display: grid;
-    grid-template-columns: repeat(8, 20mm);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-columns: 2fr repeat(8, 20mm);
+    height: 40mm;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 
-    div {
-      border-bottom: 1px solid #ddd;
-      
+    .label {
+      display: grid;
+      height: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr;
+      gap: 2mm;
+
+      &.protection {
+        width: 40mm;
+      }
+
       &:nth-child(odd) {
         background-color: #eee;
       }
       &:nth-child(even) {
         background-color: #fff;
       }
-      
-      &:first-child {
-        border-left: 1px solid #ddd;
+
+      &-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 8mm;
       }
-      &:last-child {
-        border-right: 1px solid #ddd;
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1mm;
+        list-style: none;
+        padding: 2mm 2mm 0 2mm;
+        margin: 0;
+        border-top: 1px solid #ddd;
+        font-size: 2.5mm;
+        text-align: center;
+        color: var(--primary-dark);
+
+        li {
+          &:not(:first-child) {
+            padding: 1mm 0;
+            border-top: 1px solid #ddd;
+          }
+        }
       }
-    }
-  }
-
-  .icons {
-    div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2mm;
-      color: var(--primary);
-      border-top: 1px solid #ddd;
-
-      .mdi {
-        width: 6mm;
-        height: 6mm;
-      }
-    }
-  }
-
-  .texts {
-    color: var(--secondary-dark);
-    font-size: 2mm;
-
-    div {
-      padding: 2mm;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
     }
   }
 }
