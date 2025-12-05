@@ -99,7 +99,7 @@
       color: var(--primary);
       border-top: 1px solid #ddd;
 
-      .lucide {
+      .mdi {
         width: 6mm;
         height: 6mm;
       }
@@ -118,31 +118,6 @@
       list-style: none;
       padding: 0;
       margin: 0;
-
     }
   }
-  
-
-  /* th, td {
-    border: 1px solid #aaa;
-  }
-
-  td {
-    width: 10mm;
-    text-align: center;
-    vertical-align: center;
-  }
-
-  tr.icons {
-    color: var(--primary);
-    .lucide {
-      width: 6mm;
-      height: 6mm;
-    }
-  }
-
-  tr.text {
-    color: var(--secondary-dark);
-    font-size: 3mm;
-  } */
 }

@@ -1,5 +1,2 @@
-import { createIcons, icons } from 'lucide';
+import '@mdi/font/css/materialdesignicons.min.css';
 import './style.css';
-
-// Génère tous les <i data-lucide="..."> en SVG
-createIcons({ icons });
