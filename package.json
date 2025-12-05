@@ -1,0 +1,21 @@
+{
+  "name": "electric-meter-labels",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "postcss-extend-rule": "^4.0.0",
+    "postcss-import": "^16.1.1",
+    "postcss-nested": "^7.0.2",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "lucide": "^0.555.0",
+    "normalize.css": "^8.0.1"
+  }
+}
