@@ -43,32 +43,33 @@
 
 .electric-meter-labels {
   display: inline-block;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 
   .title {
     text-align: center;
     font-size: 4mm;
-    background-color: #ddd;
+    background-color: #ccc;
     margin-bottom: 5mm;
   }
 
   .labels {
     display: grid;
-    grid-template-columns: 2fr repeat(8, 20mm);
-    height: 40mm;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    grid-template-columns: 2fr repeat(11, 18mm);
+    height: 30mm;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 
     .label {
       display: grid;
       height: 100%;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 2fr;
+      grid-template-rows: 10mm 18mm;
       gap: 2mm;
 
       &.protection {
-        width: 40mm;
+        width: 35mm;
+        li { grid-row: span 2; }
       }
 
       &:nth-child(odd) {
@@ -83,25 +84,33 @@
         align-items: center;
         justify-content: center;
         color: var(--primary);
-        font-size: 8mm;
+        font-size: 6mm;
       }
 
       &-text {
-        display: flex;
-        flex-direction: column;
-        gap: 1mm;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
         list-style: none;
-        padding: 2mm 2mm 0 2mm;
+        padding: 0;
         margin: 0;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid #ccc;
         font-size: 2.5mm;
+        line-height: 3mm;
         text-align: center;
         color: var(--primary-dark);
 
         li {
-          &:not(:first-child) {
-            padding: 1mm 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1mm .5mm;
+          
+          &.info {
+            background-color: rgba(0,0,0,0.025);
             border-top: 1px solid #ddd;
+            font-style: italic;
           }
         }
       }
