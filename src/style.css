@@ -8,6 +8,8 @@
   --primary: hsl(var(--primary-hsl));
   --primary-dark: color-mix(in hsl, hsl(var(--primary-hsl)) 40%, black);
   --primary-light: color-mix(in hsl, hsl(var(--primary-hsl)) 80%, white);
+  --primary-op-05: hsl(var(--primary-hsl) / 0.05);
+  --primary-op-10: hsl(var(--primary-hsl) / 0.10);
 
 
   font-family: "Noto Sans", sans-serif;
@@ -46,6 +48,10 @@
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 
+  & + .electric-meter-labels {
+    margin-top: 10mm;
+  }
+
   .title {
     text-align: center;
     font-size: 4mm;
@@ -55,7 +61,8 @@
 
   .labels {
     display: grid;
-    grid-template-columns: 2fr repeat(11, 18mm);
+    background-color: #fafafa;
+    grid-template-columns: 35mm repeat(11, 18mm);
     height: 30mm;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -68,7 +75,6 @@
       gap: 2mm;
 
       &.protection {
-        width: 35mm;
         li { grid-row: span 2; }
       }
 
@@ -77,6 +83,16 @@
       }
       &:nth-child(even) {
         background-color: #fff;
+      }
+
+      &.counter {
+        background-image: repeating-linear-gradient(
+          -45deg,
+          var(--primary-op-05) 0px,
+          var(--primary-op-05) 10px,
+          var(--primary-op-10) 10px,
+          var(--primary-op-10) 20px
+        );
       }
 
       &-icons {
@@ -108,7 +124,7 @@
           padding: 1mm .5mm;
           
           &.info {
-            background-color: rgba(0,0,0,0.025);
+            background-color: rgba(0,0,0,0.04);
             border-top: 1px solid #ddd;
             font-style: italic;
           }
