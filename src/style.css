@@ -60,9 +60,10 @@
   }
 
   .labels {
+    --col-width: 18mm;
     display: grid;
     background-color: #fafafa;
-    grid-template-columns: 35mm repeat(11, 18mm);
+    grid-template-columns: 35mm repeat(11, var(--col-width));
     height: 30mm;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -93,6 +94,12 @@
           var(--primary-op-10) 10px,
           var(--primary-op-10) 20px
         );
+
+        &.general {
+          grid-column: span 3;
+          justify-self: center;
+          width: calc(2 * var(--col-width));
+        }
       }
 
       &-icons {
